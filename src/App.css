@@ -1,38 +1,295 @@
+/* CSS Reset */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ----------------------------------------------
+Inter variable font. Usage:
+
+@supports (font-variation-settings: normal) {
+	html { font-family: 'Inter var', sans-serif; }
+}
+---------------------------------------------- */
+
+@font-face {
+  font-family: "Inter var";
+  font-weight: 100 900; /* stylelint-disable-line font-weight-notation */
+  font-style: normal;
+  font-display: swap;
+  src: url(/public/Inter-upright-var.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Inter var";
+  font-weight: 100 900; /* stylelint-disable-line font-weight-notation */
+  font-style: italic;
+  font-display: swap;
+  src: url(/public/Inter-italic-var.woff2) format("woff2");
+}
+
+/* Layout */
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #fcfcfc; /* #f5efe0; */
+  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    Helvetica, sans-serif;
+  padding: 1rem;
+}
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  align-content: flex-start;
+  align-items: flex-start;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  min-height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+/* Header */
+header {
+  border-bottom: 1px solid #eee;
+  flex: 100% 1;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  text-align: left;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.column {
+  flex: 1;
+  margin-right: 2rem;
+}
+
+.column--single {
+  max-width: 320px;
+  min-width: 320px;
+}
+
+.column--double {
+  max-width: 560px;
+  min-width: 560px;
+}
+
+.column--last {
+  margin-right: 0;
+}
+
+h1.site__title {
+  font-size: 2rem;
+  font-weight: 900;
+}
+span.site__tagline {
+  color: #b3b3b3;
+  font-size: 0.8rem;
+  font-family: monospace;
+}
+/* Forms */
+form {
+  background-color: #ffffff;
+  border: 1px solid #eee;
+  box-shadow: 0 0 20px #eee;
+  margin-bottom: 2rem;
+  padding: 0.8rem;
+}
+label span {
+  display: none;
+}
+input[type="text"],
+input[type="number"],
+select,
+button {
+  font-family: monospace;
+  width: 100%;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid #dddddd;
+  transition: all 0.1s ease-in-out;
+}
+button:not(:disabled) {
+  color: #fff;
+  cursor: pointer;
+  background-color: #000;
+  border-color: black;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+option {
+  text-transform: capitalize;
+}
+button {
+  font-weight: 900;
+  margin-bottom: 0;
+}
+h3 {
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+table {
+  background-color: #ffffff;
+  font-size: 0.8rem;
+  width: 100%;
+  box-shadow: 0 0 20px #eee;
+  font-family: monospace;
+  margin-bottom: 2rem;
+}
+
+thead {
+  font-weight: 900;
+}
+
+td {
+  padding: 0.6rem 0.8rem;
+  position: relative;
+  border: 1px solid #eee;
+}
+
+tr > td:nth-child(2) {
+  text-align: right;
+}
+
+.income {
+  box-shadow: inset 1px 0px limegreen;
+}
+
+.expense {
+  box-shadow: inset 1px 0px red;
+}
+
+tfoot {
+  background-color: #000;
+  color: #ffffff;
+  font-weight: 900;
 }
